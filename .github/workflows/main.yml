@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
+name: artifact deploy
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on:
+      - ubuntu-latest
+    steps:
+    - name: Artifacts Deploy
+      uses: actions/checkout@v2
+    - name: run command
+      shell: bash
+      run: |-
+        mkdir -p test	  
+        echo "testing" > new.txt       
+        
+    - uses: actions/upload-artifact@v2
+      with: 
+        path: "**/*.txt"
