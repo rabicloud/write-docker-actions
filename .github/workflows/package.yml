@@ -1,0 +1,14 @@
+name: Package Test
+
+on:
+  workflow_dispatch:
+  
+jobs:
+ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: package?
+        run: |
+          which mount
+          
